@@ -1,0 +1,20 @@
+{
+    "descri[ption": "Openag simple analog temperature thermistor sensor",
+    "class_name": "Jbt1",
+    "header_file": "openag_jbt1.h",
+    "arguments": [
+        {
+            "name": "pin",
+            "type": "int",
+	    "default": 0
+        }
+    ],
+    "outputs": {
+        "air_temperature": {
+            "type": "std_msgs/Float32"
+        }
+        },
+    "dependencies": [
+        {"type": "git", "url": "https://github.com/OpenAgInitiative/openag_firmware_module.git"}
+    ]
+}
