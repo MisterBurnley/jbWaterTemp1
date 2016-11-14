@@ -36,7 +36,7 @@ class Jbt1 : public Module {
     Jbt1(int pin);
     void begin();
     void update();
-    bool get_air_temperature(std_msgs::Float32 &msg);
+    bool get_water_temperature(std_msgs::Float32 &msg);
 
   private:
     // Private Functions
@@ -48,8 +48,8 @@ class Jbt1 : public Module {
     float valC;
     float Temp;
     int _pin;
-    float _air_temperature;
-    bool _send_air_temperature;
+    float _water_temperature;
+    bool _send_water_temperature;
     uint32_t _time_of_last_reading;
     const uint32_t _min_update_interval = 2500;
 
