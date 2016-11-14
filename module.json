@@ -10,7 +10,7 @@
         }
     ],
     "outputs": {
-        "air_temperature": {
+        "water_temperature": {
             "type": "std_msgs/Float32"
         }
         },
