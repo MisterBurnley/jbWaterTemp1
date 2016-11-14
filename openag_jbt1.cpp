@@ -26,9 +26,9 @@ void Jbt1::update() {
    }
 }
 bool Jbt1::get_air_temperature(std_msgs::Float32 &msg) {
-  msg.data = _air_temperature;
-  bool res = _send_air_temperature;
-  _send_air_temperature = false;
+  msg.data = _water_temperature;
+  bool res = _send_water_temperature;
+  _send_water_temperature = false;
   return res;
 }
 
@@ -38,9 +38,9 @@ float Jbt1::getData(void) {
   Temp = log(10000.0*((1024.0/valC-1))); 
   Temp = 1 / (0.001129148 + (0.000234125 + (0.0000000876741 * Temp * Temp ))* Temp );
   Temp = Temp - 277.15;         
-    _send_air_temperature = true;
-    _air_temperature = Temp;
-   return _air_temperature;
+    _send_water_temperature = true;
+    _water_temperature = Temp;
+   return _water_temperature;
   delay(1000);
 
 }
