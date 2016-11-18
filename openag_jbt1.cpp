@@ -25,7 +25,7 @@ void Jbt1::update() {
      _time_of_last_reading = millis();
    }
 }
-bool Jbt1::get_air_temperature(std_msgs::Float32 &msg) {
+bool Jbt1::get_water_temperature(std_msgs::Float32 &msg) {
   msg.data = _water_temperature;
   bool res = _send_water_temperature;
   _send_water_temperature = false;
