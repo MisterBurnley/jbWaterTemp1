@@ -10,4 +10,4 @@ The analog value is taken from the junction of the resistor and the thermistor
 by the signal wire connection.
 
 
-Temperature sensor code set to output water_temperature for Openag Food Bot.
+Temperature sensor code set to output water_temperature on, analog 0 ,for Openag Food Bot.
