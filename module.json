@@ -1,7 +1,7 @@
 {
     "descri[ption": "Openag simple analog temperature thermistor sensor",
     "class_name": "Jbt1",
-    "header_file": "openag_jbt1.h",
+    "header_file": "openag_jbt1",
     "arguments": [
         {
             "name": "pin",
