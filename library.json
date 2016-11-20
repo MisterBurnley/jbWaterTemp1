@@ -1,5 +1,5 @@
 {
-    "name": "openag_jbt1",
+    "name": "openag_jbWaterTemp1",
     "keywords": "openag, jbt1",
     "description": "OpenAg driver for the jbt1 analog thermister temperature sensor",
     "repository": {
