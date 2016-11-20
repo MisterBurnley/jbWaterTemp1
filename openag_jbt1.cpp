@@ -15,6 +15,7 @@ Jbt1::Jbt1(int pin) {
 void Jbt1::begin() {
 
   _time_of_last_reading = 0;
+  pinMode(_pin, INPUT);
   Serial.begin(9600);
 
 }
