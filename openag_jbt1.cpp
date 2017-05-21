@@ -9,6 +9,7 @@
 Jbt1::Jbt1(int pin) {
   _pin = pin;
   status_level = OK;
+  status_code = CODE_OK;
   status_msg = "";
 }
 
@@ -16,6 +17,7 @@ void Jbt1::begin() {
 
   _time_of_last_reading = 0;
   pinMode(_pin, INPUT);
+  digitalWrite(_pin, HIGH);
   Serial.begin(9600);
 
 }
@@ -34,6 +36,10 @@ bool Jbt1::get_water_temperature(std_msgs::Float32 &msg) {
 }
 
 float Jbt1::getData(void) {
+  if (status_level != OK) {
+    status_level = OK;
+    status_code = CODE_OK;
+    sttus_msg = "";
 
   valC = analogRead(_pin);      
   Temp = log(10000.0*((1024.0/valC-1))); 
@@ -42,8 +48,13 @@ float Jbt1::getData(void) {
     _send_water_temperature = true;
     _water_temperature = Temp;
    return _water_temperature;
-  delay(1000);
-
+  delay(2);
+  }
+  else {
+    status_level = ERROR;
+    status_code= CODE_FAILED_TO_READ;
+    status_msg = "Failed to read from sensor";
+  }
 }
 
   
